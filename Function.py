@@ -9,3 +9,4 @@ class Function:
     text: str
     symmetrical: bool = False
     symmetry_point: float = math.inf
+    antiderivative: Callable = None

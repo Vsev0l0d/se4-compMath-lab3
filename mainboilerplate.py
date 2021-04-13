@@ -41,6 +41,9 @@ def read_initial_data() -> Tuple[float, float, float, int]:
             try:
                 left = float(input('Введите левую границу интервала: '))
                 right = float(input('Введите правую границу интервала: '))
+                if right < left:
+                    print('(!) правая граница не может быть меньше левой')
+                    continue
                 epsilon = input('Введите погрешность вычисления: ')
                 break
             except ValueError:
@@ -50,6 +53,9 @@ def read_initial_data() -> Tuple[float, float, float, int]:
                 f = open(filename, "r")
                 left = float(f.readline())
                 right = float(f.readline())
+                if right < left:
+                    print('(!) правая граница не может быть меньше левой')
+                    continue
                 epsilon = f.readline()
                 f.close()
                 print('Считано из файла:')

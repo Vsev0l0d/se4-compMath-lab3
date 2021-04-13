@@ -12,7 +12,7 @@ class SimpsonsMethod(Method):
         x = a + step
         i = 1
         while x < b:
-            result += (4 * calculate_value(f, x) if (i % 2 == 0) else 2 * calculate_value(f, x))
+            result += (4 * calculate_value(f, x) if (i % 2 != 0) else 2 * calculate_value(f, x))
             x += step
             i += 1
         return result * step / 3
